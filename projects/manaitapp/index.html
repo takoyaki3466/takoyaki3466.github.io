@@ -1,9 +1,179 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="懐かしいManaitaPlusを現代のMinecraftへ再実装するManaita++。"><title>Manaita++ | Works</title><link rel="stylesheet" href="../../assets/css/projects/common.css"><link rel="stylesheet" href="../../assets/css/projects/manaitapp.css"><script src="../../assets/js/i18n.js" defer></script><script src="../../assets/js/main.js" defer></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script><script src="../../assets/js/animations/manaitapp.js" defer></script></head>
-<body data-i18n-base="../../assets/lang/ja_jp.json"><a class="skip-link" href="#main">本文へ移動</a><header class="project-header"><div class="container header-row"><a class="back-link" href="../../#projects">← 作品一覧</a><nav class="project-nav" aria-label="ページ内ナビゲーション"><a href="#tiers">段階</a><a href="#features">機能</a><a href="#loaders">対応環境</a><a href="#tech">設計</a></nav></div></header><main id="main">
-<section class="project-hero manaitapp-hero"><div class="container hero-layout reveal-left"><div><p class="eyebrow">UNOFFICIAL REIMPLEMENTATION · 1.21.1</p><h1>Manaita++</h1><p class="hero-copy">昔遊んだまな板MODを、今のMinecraftでも。懐かしい遊びを1から書き直した非公式の再実装です。</p><div class="hero-actions"><a class="button button-primary" href="https://modrinth.com/mod/manaitapp" target="_blank" rel="noopener noreferrer">Modrinth ↗</a><a class="button" href="https://github.com/takoyaki3466/ManaitaPP" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><figure class="shot hero-shot reveal-right"><img src="../../assets/images/manaitapp/manaitas.png" alt="6段階のまな板ブロック"><figcaption>素材とともに成長する、6段階のまな板</figcaption></figure></div></section>
-<section class="section" id="tiers"><div class="container"><div class="section-head reveal-right"><div><span class="section-no">01 / TIERS</span><h2>2倍から64倍へ。</h2></div><p class="section-intro">段階を選ぶと、その倍率をハイライトします。薄いのに、仕事量はどんどん厚くなります。</p></div><div class="tier-road" role="list" aria-label="まな板の段階"><button type="button" class="tier" data-tier="木" data-multiplier="×2">木<span>×2</span></button><button type="button" class="tier" data-tier="石" data-multiplier="×4">石<span>×4</span></button><button type="button" class="tier" data-tier="鉄" data-multiplier="×8">鉄<span>×8</span></button><button type="button" class="tier" data-tier="金" data-multiplier="×16">金<span>×16</span></button><button type="button" class="tier" data-tier="ダイヤ" data-multiplier="×32">ダイヤ<span>×32</span></button><button type="button" class="tier" data-tier="MTK" data-multiplier="×64">MTK<span>×64</span></button></div><p class="tier-output" aria-live="polite"><strong data-tier-name>木</strong>のまな板：<span data-tier-value>×2</span></p></div></section>
-<section class="section section-tint" id="features"><div class="container"><div class="section-head reveal-left"><div><span class="section-no">02 / TOOLS</span><h2>懐かしさに、今の使いやすさを。</h2></div><p class="section-intro">装備、範囲採掘、特殊能力などを現在の環境へ再構成しています。</p></div><div class="shot-grid"><figure class="shot reveal-shot-left"><img src="../../assets/images/manaitapp/manaitapp_items.png" alt="Manaita++のアイテム一覧"><figcaption>装備・道具・素材のラインナップ</figcaption></figure><figure class="shot reveal-shot-right"><img src="../../assets/images/manaitapp/manaita_rangebreak_gui.png" alt="Manaita++の範囲採掘GUI"><figcaption>採掘範囲はGUIから選択</figcaption></figure><figure class="shot reveal-shot-left"><img src="../../assets/images/manaitapp/manaita_origin_item.png" alt="元になったまな板アイテム"><figcaption>懐かしい原点を、現代の実装へ</figcaption></figure><figure class="shot reveal-shot-right"><img src="../../assets/images/manaitapp/manaita_sword_lightning_striker.png" alt="Manaita++の剣で雷を落とす場面"><figcaption>剣の特殊能力も派手に再現</figcaption></figure></div></div></section>
-<section class="section" id="loaders"><div class="container"><div class="section-head reveal-right"><div><span class="section-no">03 / MULTI-LOADER</span><h2>同じ遊びを、3つの入口へ。</h2></div><p class="section-intro">Minecraft 1.21.1向けに、Forge・Fabric・NeoForgeそれぞれへ対応しています。</p></div><div class="loader-grid"><div class="loader reveal-loader"><strong>Forge</strong>1.21.1</div><div class="loader reveal-loader"><strong>Fabric</strong>1.21.1</div><div class="loader reveal-loader"><strong>NeoForge</strong>1.21.1</div></div></div></section>
-<section class="section section-dark" id="architecture"><div class="container"><div class="section-head reveal-left"><div><span class="section-no">04 / ARCHITECTURE</span><h2>共通化する。でも、無理に混ぜない。</h2></div><p class="section-intro">ゲーム内の動作はCommonへ、Registry・Event・初期化などAPI差の大きい入口は各Loaderへ。添付の開発記録を、触れる経路図に整理しました。</p></div><div class="architecture-lab dark-panel reveal-right"><div class="module-tree" aria-label="Manaita++のモジュール構成"><span>common/</span><span>forge/</span><span>fabric/</span><span>neoforge/</span><span>buildSrc/</span></div><div class="route-flow"><span class="route-node">Common</span><b>→</b><span class="route-node">共通interface</span><b>→</b><span class="route-node">ServiceLoader</span><b>→</b><span class="route-node route-target" data-loader-target>Forge実装</span></div><div class="loader-switch" role="group" aria-label="表示するローダー経路"><button type="button" data-loader-route="Forge">Forge</button><button type="button" data-loader-route="Fabric">Fabric</button><button type="button" data-loader-route="NeoForge">NeoForge</button></div><p data-loader-copy aria-live="polite">Forge固有の登録処理へ接続します。</p></div><div class="architecture-cards"><article class="card reveal-detail"><h3>ServiceLoader</h3><p>Commonから実装クラスを直接参照せず、ローダーごとの処理を切り替えます。</p></article><article class="card reveal-detail"><h3>CompatRegistry</h3><p>共通側は「何を登録するか」を宣言し、登録方法はLoader側へ任せます。</p></article><article class="card reveal-detail"><h3>CompatHolder</h3><p>登録済みオブジェクトを、初期化順序に配慮しながらCommon側から参照します。</p></article></div></div></section>
-<section class="section section-tint" id="tech"><div class="container"><div class="section-head reveal-left"><div><span class="section-no">05 / LESSONS</span><h2>3つに増やして、重複を減らす。</h2></div><p class="section-intro">Registryのライフサイクル、イベント差、GUI通信、Gradle構成まで、マルチローダー化はアーキテクチャそのものへの挑戦でした。</p></div><details class="reveal-detail"><summary>イベントは名前の置き換えでは済まない</summary><div class="details-body">ForgeとFabricでは対応するイベントが一致しない場合があります。PlayerTickやノックバックなどは、同等の動作をどう作るかから検討しました。</div></details><details class="reveal-detail"><summary>GUIと通信は境界を整理する</summary><div class="details-body">MenuTypeやバッファの差を踏まえ、Commonへすべて押し込まず、ローダー固有の入口とデータ受け渡しを分離しました。全通信処理の共通化が完了した、という意味ではありません。</div></details><details class="reveal-detail"><summary>Gradleも設計の一部</summary><div class="details-body"><code>Project with path ':common' could not be found</code> といったエラーを通して、コードだけでなくモジュール階層とビルド構成の整合性も学びました。</div></details><details class="reveal-detail"><summary>現在も向き合う課題</summary><div class="details-body">イベント差、ネットワーク、DataGen、CapabilityとFabric Transfer APIの差、バージョン変更、Gradleの複雑さが継続的な設計テーマです。</div></details><details class="reveal-detail"><summary>配布ページ</summary><div class="details-body"><a href="https://www.curseforge.com/minecraft/mc-mods/manaitapp" target="_blank" rel="noopener noreferrer">CurseForgeでも公開中 ↗</a></div></details></div></section></main><footer class="project-footer"><div class="container footer-row"><span>© <span data-current-year>2026</span> takoyaki3466</span><a class="library-credit" href="https://scrollrevealjs.org/" target="_blank" rel="noopener noreferrer">Motion: ScrollReveal 4.0.9 ↗</a></div></footer></body></html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="懐かしいManaitaPlusを現代のMinecraftへ再実装するManaita++。">
+    <title>Manaita++ | Works</title>
+    <link rel="stylesheet" href="../../assets/css/projects/common.css">
+    <link rel="stylesheet" href="../../assets/css/projects/manaitapp.css">
+    <script src="../../assets/js/i18n.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+    <script src="../../assets/js/animations/manaitapp.js" defer></script>
+</head>
+<body data-i18n-base="../../assets/lang/ja_jp.json"><a class="skip-link" href="#main">本文へ移動</a>
+<header class="project-header">
+    <div class="container header-row"><a class="back-link" href="../../#projects">← 作品一覧</a>
+        <nav class="project-nav" aria-label="ページ内ナビゲーション"><a href="#tiers">段階</a><a
+                href="#features">機能</a><a href="#loaders">対応環境</a><a href="#tech">設計</a></nav>
+    </div>
+</header>
+<main id="main">
+    <section class="project-hero manaitapp-hero">
+        <div class="container hero-layout reveal-left">
+            <div><p class="eyebrow">UNOFFICIAL REIMPLEMENTATION · 1.21.1</p>
+                <h1>Manaita++</h1>
+                <p class="hero-copy">
+                    昔遊んだまな板MODを、今のMinecraftでも。懐かしい遊びを1から書き直した非公式の再実装です。</p>
+                <div class="hero-actions"><a class="button button-primary" href="https://modrinth.com/mod/manaitapp"
+                                             target="_blank" rel="noopener noreferrer">Modrinth ↗</a><a class="button"
+                                                                                                        href="https://github.com/takoyaki3466/ManaitaPP"
+                                                                                                        target="_blank"
+                                                                                                        rel="noopener noreferrer">GitHub
+                    ↗</a></div>
+            </div>
+            <figure class="shot hero-shot reveal-right"><img src="../../assets/images/manaitapp/manaitas.png"
+                                                             alt="6段階のまな板ブロック">
+                <figcaption>素材とともに成長する、6段階のまな板</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="section" id="tiers">
+        <div class="container">
+            <div class="section-head reveal-right">
+                <div><span class="section-no">01 / TIERS</span>
+                    <h2>2倍から64倍へ。</h2></div>
+                <p class="section-intro">
+                    段階を選ぶと、その倍率をハイライトします。薄いのに、仕事量はどんどん厚くなります。</p></div>
+            <div class="tier-road" role="list" aria-label="まな板の段階">
+                <button type="button" class="tier" data-tier="木" data-multiplier="×2">木<span>×2</span></button>
+                <button type="button" class="tier" data-tier="石" data-multiplier="×4">石<span>×4</span></button>
+                <button type="button" class="tier" data-tier="鉄" data-multiplier="×8">鉄<span>×8</span></button>
+                <button type="button" class="tier" data-tier="金" data-multiplier="×16">金<span>×16</span></button>
+                <button type="button" class="tier" data-tier="ダイヤ" data-multiplier="×32">ダイヤ<span>×32</span>
+                </button>
+                <button type="button" class="tier" data-tier="MTK" data-multiplier="×64">MTK<span>×64</span></button>
+            </div>
+            <p class="tier-output" aria-live="polite"><strong data-tier-name>木</strong>のまな板：<span data-tier-value>×2</span>
+            </p></div>
+    </section>
+    <section class="section section-tint" id="features">
+        <div class="container">
+            <div class="section-head reveal-left">
+                <div><span class="section-no">02 / TOOLS</span>
+                    <h2>懐かしさに、今の使いやすさを。</h2></div>
+                <p class="section-intro">装備、範囲採掘、特殊能力などを現在の環境へ再構成しています。</p></div>
+            <div class="shot-grid">
+                <figure class="shot reveal-shot-left"><img src="../../assets/images/manaitapp/manaitapp_items.png"
+                                                           alt="Manaita++のアイテム一覧">
+                    <figcaption>装備・道具・素材のラインナップ</figcaption>
+                </figure>
+                <figure class="shot reveal-shot-right"><img
+                        src="../../assets/images/manaitapp/manaita_rangebreak_gui.png" alt="Manaita++の範囲採掘GUI">
+                    <figcaption>採掘範囲はGUIから選択</figcaption>
+                </figure>
+                <figure class="shot reveal-shot-left"><img src="../../assets/images/manaitapp/manaita_origin_item.png"
+                                                           alt="元になったまな板アイテム">
+                    <figcaption>懐かしい原点を、現代の実装へ</figcaption>
+                </figure>
+                <figure class="shot reveal-shot-right"><img
+                        src="../../assets/images/manaitapp/manaita_sword_lightning_striker.png"
+                        alt="Manaita++の剣で雷を落とす場面">
+                    <figcaption>剣の特殊能力も派手に再現</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="loaders">
+        <div class="container">
+            <div class="section-head reveal-right">
+                <div><span class="section-no">03 / MULTI-LOADER</span>
+                    <h2>同じ遊びを、3つの入口へ。</h2></div>
+                <p class="section-intro">Minecraft 1.21.1向けに、Forge・Fabric・NeoForgeそれぞれへ対応しています。</p>
+            </div>
+            <div class="loader-grid">
+                <div class="loader reveal-loader"><strong>Forge</strong>1.21.1</div>
+                <div class="loader reveal-loader"><strong>Fabric</strong>1.21.1</div>
+                <div class="loader reveal-loader"><strong>NeoForge</strong>1.21.1</div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-dark" id="architecture">
+        <div class="container">
+            <div class="section-head reveal-left">
+                <div><span class="section-no">04 / ARCHITECTURE</span>
+                    <h2>共通化する。でも、無理に混ぜない。</h2></div>
+                <p class="section-intro">
+                    ゲーム内の動作はCommonへ、Registry・Event・初期化などAPI差の大きい入口は各Loaderへ。添付の開発記録を、触れる経路図に整理しました。</p>
+            </div>
+            <div class="architecture-lab dark-panel reveal-right">
+                <div class="module-tree" aria-label="Manaita++のモジュール構成">
+                    <span>common/</span><span>forge/</span><span>fabric/</span><span>neoforge/</span><span>buildSrc/</span>
+                </div>
+                <div class="route-flow"><span class="route-node">Common</span><b>→</b><span class="route-node">共通interface</span><b>→</b><span
+                        class="route-node">ServiceLoader</span><b>→</b><span class="route-node route-target"
+                                                                             data-loader-target>Forge実装</span></div>
+                <div class="loader-switch" role="group" aria-label="表示するローダー経路">
+                    <button type="button" data-loader-route="Forge">Forge</button>
+                    <button type="button" data-loader-route="Fabric">Fabric</button>
+                    <button type="button" data-loader-route="NeoForge">NeoForge</button>
+                </div>
+                <p data-loader-copy aria-live="polite">Forge固有の登録処理へ接続します。</p></div>
+            <div class="architecture-cards">
+                <article class="card reveal-detail"><h3>ServiceLoader</h3>
+                    <p>Commonから実装クラスを直接参照せず、ローダーごとの処理を切り替えます。</p></article>
+                <article class="card reveal-detail"><h3>CompatRegistry</h3>
+                    <p>共通側は「何を登録するか」を宣言し、登録方法はLoader側へ任せます。</p></article>
+                <article class="card reveal-detail"><h3>CompatHolder</h3>
+                    <p>登録済みオブジェクトを、初期化順序に配慮しながらCommon側から参照します。</p></article>
+            </div>
+        </div>
+    </section>
+    <section class="section section-tint" id="tech">
+        <div class="container">
+            <div class="section-head reveal-left">
+                <div><span class="section-no">05 / LESSONS</span>
+                    <h2>3つに増やして、重複を減らす。</h2></div>
+                <p class="section-intro">
+                    Registryのライフサイクル、イベント差、GUI通信、Gradle構成まで、マルチローダー化はアーキテクチャそのものへの挑戦でした。</p>
+            </div>
+            <details class="reveal-detail">
+                <summary>イベントは名前の置き換えでは済まない</summary>
+                <div class="details-body">
+                    ForgeとFabricでは対応するイベントが一致しない場合があります。PlayerTickやノックバックなどは、同等の動作をどう作るかから検討しました。
+                </div>
+            </details>
+            <details class="reveal-detail">
+                <summary>GUIと通信は境界を整理する</summary>
+                <div class="details-body">
+                    MenuTypeやバッファの差を踏まえ、Commonへすべて押し込まず、ローダー固有の入口とデータ受け渡しを分離しました。全通信処理の共通化が完了した、という意味ではありません。
+                </div>
+            </details>
+            <details class="reveal-detail">
+                <summary>Gradleも設計の一部</summary>
+                <div class="details-body"><code>Project with path ':common' could not be found</code>
+                    といったエラーを通して、コードだけでなくモジュール階層とビルド構成の整合性も学びました。
+                </div>
+            </details>
+            <details class="reveal-detail">
+                <summary>現在も向き合う課題</summary>
+                <div class="details-body">イベント差、ネットワーク、DataGen、CapabilityとFabric Transfer
+                    APIの差、バージョン変更、Gradleの複雑さが継続的な設計テーマです。
+                </div>
+            </details>
+            <details class="reveal-detail">
+                <summary>配布ページ</summary>
+                <div class="details-body"><a href="https://www.curseforge.com/minecraft/mc-mods/manaitapp"
+                                             target="_blank" rel="noopener noreferrer">CurseForgeでも公開中 ↗</a></div>
+            </details>
+        </div>
+    </section>
+</main>
+<footer class="project-footer">
+    <div class="container footer-row"><span>© <span data-current-year>2026</span> takoyaki3466</span><a
+            class="library-credit" href="https://scrollrevealjs.org/" target="_blank" rel="noopener noreferrer">Motion:
+        ScrollReveal 4.0.9 ↗</a></div>
+</footer>
+</body>
+</html>
