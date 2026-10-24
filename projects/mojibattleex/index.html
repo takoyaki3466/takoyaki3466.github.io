@@ -285,6 +285,18 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .001ms !important; }
     }
+    .fighter-draw { margin-top: 16px; color: #b9d0c5; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    .fighter-draw strong { color: var(--mint); font-size: 18px; }
+    .hero h1 { white-space: nowrap; }
+    .hero h1 br, h2 br { display: none; }
+    h2 { word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
+    .fighter-overlay[hidden] { display: none; }
+    .fighter-overlay { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at center, rgba(31,212,120,.32), rgba(3,9,7,.97) 62%); text-align: center; }
+    .fighter-overlay-inner { width: min(92vw, 1100px); }
+    .summoned-glyph { display: block; color: var(--mint); font-family: var(--display); font-size: min(48vw, 430px); line-height: .75; text-shadow: 0 0 28px rgba(100,255,165,.5), 20px 18px 0 rgba(82,200,255,.18), -18px -14px 0 rgba(255,128,61,.18); }
+    .fighter-overlay h2 { margin: 28px 0 12px; font: clamp(26px,5vw,58px)/1 var(--display); }
+    .fighter-overlay p { color: var(--muted); }
+    @media (max-width: 760px) { .hero h1 { white-space: normal; } }
   </style>
 </head>
 <body>
@@ -292,7 +304,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="../../../../../takoyaki-portfolio" aria-label="Works ホームへ">
+      <a class="wordmark" href="../../" aria-label="Works ホームへ">
         <span class="wordmark-mark" aria-hidden="true">文</span>
         <span>MojiBattleEX</span>
       </a>
@@ -307,7 +319,7 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="project-heading">
-      <div class="hero-media" aria-hidden="true"><img src="../../assets/image/mojibattleex/hero-clash.jpg" alt=""></div>
+      <div class="hero-media" aria-hidden="true"><img src="../../assets/images/mojibattleex/hero-clash.jpg" alt=""></div>
       <div class="container hero-inner">
         <p class="eyebrow animate__animated animate__fadeInDown">PERSONAL GAME PROJECT · 2026</p>
         <p class="hero-kicker animate__animated animate__fadeInUp" data-i18n="hero.kicker">ただひたすら、やかましい。</p>
@@ -316,7 +328,9 @@
         <div class="hero-actions animate__animated animate__fadeInUp">
           <a class="button button-primary" href="https://github.com/takoyaki3466/MojiBattleEX" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.source">ソースを見る</span><span aria-hidden="true">↗</span></a>
           <a class="button button-ghost" href="#about"><span data-i18n="cta.explore">作品をのぞく</span><span aria-hidden="true">↓</span></a>
+          <button class="button button-ghost" type="button" data-fighter-draw>今日の文字を召喚</button>
         </div>
+        <p class="fighter-draw animate__animated" data-fighter-result aria-live="polite">TIP: キーボードで「MOJI」と打つと、秘密の参戦者が現れます。</p>
         <div class="hero-meta animate__animated animate__fadeInUp" aria-label="プロジェクト概要" data-i18n-aria-label="a11y.projectSummary">
           <div class="hero-meta-item"><strong>2–4</strong><span data-i18n="hero.meta.players">LOCAL PLAYERS</span></div>
           <div class="hero-meta-item"><strong>3D</strong><span data-i18n="hero.meta.genre">ACTION BATTLE</span></div>
@@ -325,6 +339,7 @@
         </div>
       </div>
       <span class="scroll-cue" aria-hidden="true">SCROLL TO ENTER</span>
+      <div class="fighter-overlay" data-fighter-overlay hidden role="dialog" aria-modal="true" aria-labelledby="summoned-heading"><div class="fighter-overlay-inner animate__animated"><span class="summoned-glyph" data-summoned-glyph>蟹</span><h2 id="summoned-heading" data-summoned-name>「蟹」参戦</h2><p data-summoned-copy>横歩きで間合いを取る。</p><button class="button button-primary" type="button" data-close-fighter>戦場へ戻る</button></div></div>
     </section>
 
     <section class="section" id="about" aria-labelledby="about-heading">
@@ -350,7 +365,7 @@
 
     <section class="feature-stage" aria-labelledby="battle-heading">
       <div class="feature-image">
-        <img src="../../assets/image/mojibattleex/split-battle.jpg" alt="左右分割画面で必殺技がぶつかり合う戦闘シーン" data-i18n-alt="images.splitBattle">
+        <img src="../../assets/images/mojibattleex/split-battle.jpg" alt="左右分割画面で必殺技がぶつかり合う戦闘シーン" data-i18n-alt="images.splitBattle">
         <div class="feature-caption" data-reveal="fadeInUp">
           <h2 id="battle-heading" data-i18n="battle.title">同じ画面で、<br>全力衝突。</h2>
           <p data-i18n="battle.copy">2人なら左右分割、3〜4人なら2×2分割。各プレイヤーが自分のカメラで、同じ戦場のカオスを追いかけます。</p>
@@ -366,19 +381,19 @@
         </div>
         <div class="modes-grid">
           <article class="mode-card" data-reveal="fadeInUp">
-            <img src="../../assets/image/mojibattleex/chaos-mode.jpg" alt="多数の文字キャラクターが入り乱れるカオスモード" data-i18n-alt="images.chaos">
+            <img src="../../assets/images/mojibattleex/chaos-mode.jpg" alt="多数の文字キャラクターが入り乱れるカオスモード" data-i18n-alt="images.chaos">
             <div class="mode-card-copy"><span class="mode-no">MODE 01</span><h3 data-i18n="modes.chaos.title">超究極スーパーカオス</h3><p data-i18n="modes.chaos.copy">操作キャラ、追従メイン、補助キャラが一斉に出撃。画面の情報量まで必殺技です。</p></div>
           </article>
           <article class="mode-card" data-reveal="fadeInUp">
-            <img src="../../assets/image/mojibattleex/ultimate-impact.jpg" alt="巨大な文字演出が表示された必殺技シーン" data-i18n-alt="images.ultimate">
+            <img src="../../assets/images/mojibattleex/ultimate-impact.jpg" alt="巨大な文字演出が表示された必殺技シーン" data-i18n-alt="images.ultimate">
             <div class="mode-card-copy"><span class="mode-no">MODE 02</span><h3 data-i18n="modes.ultimate.title">必殺技</h3><p data-i18n="modes.ultimate.copy">文字の意味を、そのままド派手な一撃へ。カットインも画面シェイクも遠慮なし。</p></div>
           </article>
           <article class="mode-card" data-reveal="fadeInUp">
-            <img src="../../assets/image/mojibattleex/four-way-finishers.jpg" alt="4分割された文字キャラクターの必殺技演出" data-i18n-alt="images.fourWay">
+            <img src="../../assets/images/mojibattleex/four-way-finishers.jpg" alt="4分割された文字キャラクターの必殺技演出" data-i18n-alt="images.fourWay">
             <div class="mode-card-copy"><span class="mode-no">MODE 03</span><h3 data-i18n="modes.local.title">ローカル2〜4人対戦</h3><p data-i18n="modes.local.copy">キーボードまたはJoy-Conで同じPCに集合。最後まで生き残るか、残りHP率で勝負です。</p></div>
           </article>
           <article class="mode-card" data-reveal="fadeInUp">
-            <img src="../../assets/image/mojibattleex/title-menu.jpg" alt="文字バトルEXのタイトルメニュー" data-i18n-alt="images.menu">
+            <img src="../../assets/images/mojibattleex/title-menu.jpg" alt="文字バトルEXのタイトルメニュー" data-i18n-alt="images.menu">
             <div class="mode-card-copy"><span class="mode-no">MODE 04</span><h3 data-i18n="modes.custom.title">つくる・試す・増やす</h3><p data-i18n="modes.custom.copy">10枠のカスタムキャラ、トレーニング、外部JAR MOD。遊び方だけでなく中身も拡張できます。</p></div>
           </article>
         </div>
@@ -392,7 +407,7 @@
           <p class="section-copy" data-i18n="expansion.copy">ゲーム本体の公開APIだけを使って作った、独立コンテンツMOD。キャラクター、能力、翻訳、画像をJARひとつで追加します。</p>
         </div>
         <div class="expansion-hero" data-reveal="fadeInUp">
-          <div class="expansion-shot"><img src="../../assets/image/mojibattleex/expansion-roster.jpg" alt="木、㌠、薪など拡張キャラクターの4分割演出" data-i18n-alt="images.expansion"></div>
+          <div class="expansion-shot"><img src="../../assets/images/mojibattleex/expansion-roster.jpg" alt="木、㌠、薪など拡張キャラクターの4分割演出" data-i18n-alt="images.expansion"></div>
           <div class="expansion-content">
             <p class="expansion-tag">SEPARATE CONTENT MOD</p>
             <h3>EXPANSION<br>CONTENT</h3>
@@ -422,10 +437,10 @@
         </div>
       </div>
       <div class="gallery-track" aria-label="ゲームスクリーンショット" data-i18n-aria-label="a11y.gallery">
-        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/image/mojibattleex/unity-finisher.jpg" alt="一致団結の必殺技演出" data-i18n-alt="images.unity"><figcaption data-i18n="gallery.cap1">一致団結 — 文字㌠が分裂して共同攻撃</figcaption></figure>
-        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/image/mojibattleex/firewood-finisher.jpg" alt="薪.zipの必殺技演出" data-i18n-alt="images.firewood"><figcaption data-i18n="gallery.cap2">薪.zip — 画面を埋める必殺カットイン</figcaption></figure>
-        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/image/mojibattleex/hero-clash.jpg" alt="青い斬撃と巨大な蟹が衝突する必殺技演出" data-i18n-alt="images.crab"><figcaption data-i18n="gallery.cap3">一甲殻臨界 — 蟹と斬撃がぶつかる瞬間</figcaption></figure>
-        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/image/mojibattleex/expansion-roster.jpg" alt="4人の必殺技演出が同時に表示された画面" data-i18n-alt="images.quad"><figcaption data-i18n="gallery.cap4">4画面同時必殺 — 読めるカオス</figcaption></figure>
+        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/images/mojibattleex/unity-finisher.jpg" alt="一致団結の必殺技演出" data-i18n-alt="images.unity"><figcaption data-i18n="gallery.cap1">一致団結 — 文字㌠が分裂して共同攻撃</figcaption></figure>
+        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/images/mojibattleex/firewood-finisher.jpg" alt="薪.zipの必殺技演出" data-i18n-alt="images.firewood"><figcaption data-i18n="gallery.cap2">薪.zip — 画面を埋める必殺カットイン</figcaption></figure>
+        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/images/mojibattleex/hero-clash.jpg" alt="青い斬撃と巨大な蟹が衝突する必殺技演出" data-i18n-alt="images.crab"><figcaption data-i18n="gallery.cap3">一甲殻臨界 — 蟹と斬撃がぶつかる瞬間</figcaption></figure>
+        <figure class="gallery-item" tabindex="0" role="button" data-reveal="fadeInUp"><img src="../../assets/images/mojibattleex/expansion-roster.jpg" alt="4人の必殺技演出が同時に表示された画面" data-i18n-alt="images.quad"><figcaption data-i18n="gallery.cap4">4画面同時必殺 — 読めるカオス</figcaption></figure>
       </div>
       <p class="gallery-hint" data-i18n="gallery.hint">横にスクロール / クリックで拡大</p>
     </section>
@@ -448,7 +463,7 @@
     </section>
 
     <section class="closing" aria-labelledby="closing-heading">
-      <img src="../../assets/image/mojibattleex/chaos-mode.jpg" alt="" aria-hidden="true">
+      <img src="../../assets/images/mojibattleex/chaos-mode.jpg" alt="" aria-hidden="true">
       <div class="closing-content" data-reveal="zoomIn">
         <p class="eyebrow" style="justify-content:center" data-i18n="closing.eyebrow">SOURCE AVAILABLE ON GITHUB</p>
         <h2 id="closing-heading" data-i18n="closing.title">次に戦う文字は、<br>まだ未定。</h2>
@@ -465,7 +480,7 @@
     <div class="container footer-inner">
       <small>© <span data-current-year>2026</span> takoyaki3466 · MojiBattleEX</small>
       <div class="footer-links">
-        <a href="../../../../../takoyaki-portfolio#projects" data-i18n="footer.back">作品一覧へ戻る</a>
+        <a href="../../#projects" data-i18n="footer.back">作品一覧へ戻る</a>
         <a href="https://animate.style/" target="_blank" rel="noopener noreferrer" data-i18n="footer.animation">Motion: Animate.css ↗</a>
       </div>
     </div>
@@ -477,6 +492,7 @@
     <p class="lightbox-caption"></p>
   </dialog>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
   <script>
     'use strict';
 
@@ -555,6 +571,34 @@
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) lightbox.close();
     });
+
+    const fighters = [['蟹','横歩きで間合いを取る。'],['∫','曲線的に攻め込む。'],['㍿','組織力で押し切る。'],['火','だいたい画面が派手になる。']];
+    let fighterIndex = 0;
+    const fighterResult = document.querySelector('[data-fighter-result]');
+    const fighterOverlay = document.querySelector('[data-fighter-overlay]');
+    const summonFighter = (secret = false) => {
+      const fighter = secret ? ['隠','見つけたあなたも、今日から文字勢。'] : fighters[fighterIndex++ % fighters.length];
+      fighterResult.textContent = `${secret ? 'SECRET JOIN' : 'NEXT FIGHTER'}: 「${fighter[0]}」 — ${fighter[1]}`;
+      document.querySelector('[data-summoned-glyph]').textContent = fighter[0];
+      document.querySelector('[data-summoned-name]').textContent = `「${fighter[0]}」参戦`;
+      document.querySelector('[data-summoned-copy]').textContent = fighter[1];
+      fighterOverlay.hidden = false;
+      const inner = fighterOverlay.querySelector('.fighter-overlay-inner');
+      inner.classList.remove('animate__zoomIn');
+      requestAnimationFrame(() => inner.classList.add('animate__zoomIn'));
+      fighterResult.classList.remove('animate__flash');
+      requestAnimationFrame(() => fighterResult.classList.add('animate__flash'));
+      window.confetti?.({particleCount:180,spread:110,startVelocity:52,colors:['#64ffa5','#52c8ff','#ff803d','#ffffff'],disableForReducedMotion:true,zIndex:100});
+    };
+    document.querySelector('[data-fighter-draw]').addEventListener('click', () => summonFighter(false));
+    document.querySelector('[data-close-fighter]').addEventListener('click', () => { fighterOverlay.hidden = true; });
+    let secretBuffer = '';
+    window.addEventListener('keydown', (event) => {
+      if (event.target.matches('input, textarea, select')) return;
+      secretBuffer = (secretBuffer + event.key.toUpperCase()).slice(-4);
+      if (secretBuffer === 'MOJI') summonFighter(true);
+    });
+    window.addEventListener('keydown', (event) => { if (event.key === 'Escape') fighterOverlay.hidden = true; });
   </script>
 </body>
 </html>
