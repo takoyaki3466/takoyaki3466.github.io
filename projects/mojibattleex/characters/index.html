@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07100d">
+    <meta name="description" content="MojiBattleEXに登場する16体のメインキャラクターと8体の補助キャラクターを、動くセレクト画面で紹介します。">
+    <meta property="og:title" content="CHARACTER SELECT | MojiBattleEX">
+    <meta property="og:description" content="読むだけじゃない。選んで、動かして、今日の文字を決めよう。">
+    <title>CHARACTER SELECT | MojiBattleEX</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/projects/mojibattleex-characters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="../../../assets/js/mojibattleex-characters.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="wordmark" href="../" aria-label="MojiBattleEX作品ページへ戻る">
+            <span class="wordmark-mark" aria-hidden="true">文</span>
+            <span>MojiBattleEX</span>
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+            <a href="#roster">CHARACTERS</a>
+            <a href="#team-maker">TEAM MAKER</a>
+            <a class="nav-back" href="../">作品ページへ ↗</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section class="select-hero" aria-labelledby="page-heading">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit" aria-hidden="true">
+            <span style="--i:0">㍿</span><span style="--i:1">い</span><span style="--i:2">∫</span>
+            <span style="--i:3">1</span><span style="--i:4">D</span><span style="--i:5">蟹</span>
+        </div>
+        <div class="container select-hero-inner">
+            <p class="eyebrow animate__animated animate__fadeInDown">24 PLAYABLE MOJI · WHO WILL YOU PICK?</p>
+            <p class="hero-counter animate__animated animate__fadeIn">16 MAIN <span>+</span> 8 SUPPORT</p>
+            <h1 id="page-heading" class="animate__animated animate__fadeInUp">CHARACTER<br><span>SELECT</span></h1>
+            <p class="hero-lead animate__animated animate__fadeInUp">読むだけじゃない。触って、選んで、戦い方を見つけよう。<br>文字の意味も見た目も、ぜんぶ能力になる。</p>
+            <a class="enter-button animate__animated animate__fadeInUp" href="#roster"><span>SELECT START</span><b aria-hidden="true">↓</b></a>
+        </div>
+        <div class="scroll-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="roster-section" id="roster" aria-labelledby="roster-heading">
+        <div class="container roster-head" data-reveal>
+            <div>
+                <span class="section-index">01 / ROSTER</span>
+                <h2 id="roster-heading">文字を選べ。</h2>
+            </div>
+            <p>カードを選ぶと、キャラクターがステージに参戦します。キーボードの矢印キーでも選択できます。</p>
+        </div>
+
+        <div class="selector-shell">
+            <div class="selector-stage" data-accent="#64ffa5">
+                <div class="stage-noise" aria-hidden="true"></div>
+                <div class="stage-speedlines" aria-hidden="true"></div>
+                <div class="stage-watermark" data-stage-watermark aria-hidden="true">㍿</div>
+                <div class="stage-character" data-stage-character>
+                    <div class="stage-aura" aria-hidden="true"></div>
+                    <img data-stage-image src="../../../assets/images/mojibattleex/characters/kabushiki.png" alt="株式会社">
+                </div>
+                <div class="stage-copy" aria-live="polite">
+                    <div class="stage-meta"><span data-stage-type>MAIN CHARACTER</span><span data-stage-number>01 / 16</span></div>
+                    <h3 data-stage-name>株式会社</h3>
+                    <p data-stage-description>会社を増やし、時間をかけて必殺技を強くする成長型。</p>
+                    <div class="style-meter" aria-hidden="true"><span>TACTICAL DATA</span><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <p class="stage-prompt" aria-hidden="true">READY? — CLICK A FIGHTER</p>
+            </div>
+
+            <div class="roster-panel">
+                <div class="roster-tabs" role="tablist" aria-label="キャラクター種別">
+                    <button class="roster-tab is-active" id="main-tab" role="tab" aria-selected="true" aria-controls="main-roster" data-tab="main">
+                        <span>MAIN</span><b>16</b>
+                    </button>
+                    <button class="roster-tab" id="support-tab" role="tab" aria-selected="false" aria-controls="support-roster" data-tab="support" tabindex="-1">
+                        <span>SUPPORT</span><b>08</b>
+                    </button>
+                </div>
+                <div class="character-grid" id="main-roster" role="tabpanel" aria-labelledby="main-tab" data-roster="main"></div>
+                <div class="character-grid" id="support-roster" role="tabpanel" aria-labelledby="support-tab" data-roster="support" hidden></div>
+                <p class="roster-help"><span aria-hidden="true">← →</span> MOVE <span aria-hidden="true">ENTER</span> SELECT</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="battle-callout" aria-label="文字の戦い方">
+        <div class="battle-callout-track" aria-hidden="true">
+            <span>GROW</span><b>×</b><span>CONTROL</span><b>×</b><span>BURST</span><b>×</b><span>SUMMON</span><b>×</b><span>SUPPORT</span><b>×</b>
+            <span>GROW</span><b>×</b><span>CONTROL</span><b>×</b><span>BURST</span><b>×</b><span>SUMMON</span><b>×</b><span>SUPPORT</span><b>×</b>
+        </div>
+        <div class="container callout-inner" data-reveal>
+            <p>見た目は一文字。<br><strong>戦い方は、24通り。</strong></p>
+            <span>メインで攻め方を決め、補助で戦況をひっくり返す。</span>
+        </div>
+    </section>
+
+    <section class="team-section" id="team-maker" aria-labelledby="team-heading">
+        <div class="container team-layout">
+            <div class="team-copy" data-reveal>
+                <span class="section-index">02 / TEAM MAKER</span>
+                <h2 id="team-heading">迷ったら、<br>運命に任せろ。</h2>
+                <p>メインと補助を1体ずつ抽選します。思いがけない組み合わせが、次の戦い方になるかもしれません。</p>
+                <button class="draw-button" type="button" data-draw-team>
+                    <span>RANDOM SELECT</span><b aria-hidden="true">↻</b>
+                </button>
+            </div>
+            <div class="versus-board" data-reveal aria-live="polite">
+                <article class="team-slot team-main">
+                    <span>MAIN</span>
+                    <div class="team-glyph"><img data-team-main-image src="../../../assets/images/mojibattleex/characters/kabushiki.png" alt=""></div>
+                    <h3 data-team-main-name>株式会社</h3>
+                </article>
+                <div class="plus-mark" aria-hidden="true">+</div>
+                <article class="team-slot team-support">
+                    <span>SUPPORT</span>
+                    <div class="team-glyph"><img data-team-support-image src="../../../assets/images/mojibattleex/characters/t.png" alt=""></div>
+                    <h3 data-team-support-name>T</h3>
+                </article>
+                <div class="result-stamp" data-result-stamp aria-hidden="true">READY!</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-heading">
+        <div class="closing-glyphs" aria-hidden="true">㍿ い ∫ 1 D ㌔ 短 🤩 A 𰻞 は ㍻ 斬 獣 東 蟹</div>
+        <div class="container closing-content" data-reveal>
+            <p class="eyebrow">RETURN TO THE BATTLEFIELD</p>
+            <h2 id="closing-heading">選んだ文字で、<br>戦場へ。</h2>
+            <a class="enter-button" href="../"><span>MojiBattleEXを見る</span><b aria-hidden="true">↗</b></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <small>© <span data-current-year>2026</span> takoyaki3466 · MojiBattleEX</small>
+        <div class="footer-links">
+            <a href="../">作品ページへ戻る</a>
+            <a href="https://animate.style/" target="_blank" rel="noopener noreferrer">Motion: Animate.css ↗</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations" target="_blank" rel="noopener noreferrer">Scroll motion: MDN ↗</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

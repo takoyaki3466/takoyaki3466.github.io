@@ -602,6 +602,129 @@
             line-height: 1.8;
         }
 
+        .characters-teaser {
+            position: relative;
+            overflow: hidden;
+            border-block: 1px solid var(--line);
+            background: #050c09;
+        }
+
+        .characters-teaser::before {
+            position: absolute;
+            inset: 0;
+            content: "";
+            background: url("../../assets/images/mojibattleex/characters/theme-modern-background.png") center/cover;
+            opacity: .26;
+            filter: hue-rotate(28deg) saturate(.85);
+        }
+
+        .characters-teaser::after {
+            position: absolute;
+            inset: 0;
+            content: "";
+            background: linear-gradient(90deg, rgba(4, 12, 8, .96), rgba(4, 12, 8, .68) 52%, rgba(4, 12, 8, .28));
+        }
+
+        .characters-teaser-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            min-height: 580px;
+            grid-template-columns: minmax(0, .8fr) minmax(440px, 1.2fr);
+            align-items: center;
+            gap: 56px;
+            padding-block: 80px;
+        }
+
+        .characters-teaser h2 {
+            margin: 0;
+            font-family: var(--display);
+            font-size: clamp(46px, 6.8vw, 88px);
+            line-height: .92;
+            letter-spacing: -.06em;
+        }
+
+        .characters-teaser-copy > p {
+            max-width: 520px;
+            margin: 24px 0 30px;
+            color: #b8cfc4;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .teaser-roster {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            transform: rotate(2deg);
+        }
+
+        .teaser-fighter {
+            position: relative;
+            display: grid;
+            aspect-ratio: .86;
+            place-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(7, 18, 13, .78);
+            transition: border-color .2s, transform .22s, background .2s;
+        }
+
+        .teaser-fighter::after {
+            position: absolute;
+            inset: auto 8px 7px;
+            color: var(--mint);
+            content: attr(data-name);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: .08em;
+        }
+
+        .teaser-fighter img {
+            width: 82%;
+            height: 76%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 0 rgba(0, 0, 0, .3));
+            transition: transform .22s, filter .22s;
+        }
+
+        .teaser-fighter:hover {
+            z-index: 2;
+            border-color: var(--mint);
+            background: rgba(100, 255, 165, .08);
+            transform: translateY(-8px) rotate(-2deg);
+        }
+
+        .teaser-fighter:hover img {
+            transform: scale(1.08);
+            filter: drop-shadow(0 8px 0 rgba(0, 0, 0, .3)) drop-shadow(0 0 14px rgba(100, 255, 165, .8));
+        }
+
+        .teaser-badge {
+            position: absolute;
+            right: -18px;
+            top: -26px;
+            z-index: 4;
+            display: grid;
+            width: 106px;
+            aspect-ratio: 1;
+            place-items: center;
+            border: 2px solid var(--orange);
+            border-radius: 50%;
+            color: var(--orange);
+            font-family: var(--display);
+            font-size: 16px;
+            line-height: .92;
+            text-align: center;
+            transform: rotate(10deg);
+            animation: teaser-spin 14s linear infinite;
+        }
+
+        @keyframes teaser-spin {
+            to { transform: rotate(370deg); }
+        }
+
         .expansion {
             background: #dfffeb;
             color: #08130e;
@@ -1012,6 +1135,10 @@
                 grid-column: span 12;
             }
 
+            .characters-teaser-inner {
+                grid-template-columns: 1fr;
+            }
+
             .feature-caption {
                 flex-direction: column;
                 align-items: start;
@@ -1037,6 +1164,21 @@
 
             .site-nav a:not(.nav-github) {
                 display: none;
+            }
+
+            .characters-teaser-inner {
+                min-height: auto;
+                padding-block: 72px;
+            }
+
+            .teaser-roster {
+                gap: 6px;
+            }
+
+            .teaser-badge {
+                right: -4px;
+                width: 82px;
+                font-size: 13px;
             }
 
             .hero {
@@ -1195,6 +1337,7 @@
         <nav class="site-nav" aria-label="メインナビゲーション" data-i18n-aria-label="a11y.nav">
             <a href="#about" data-i18n="nav.about">概要</a>
             <a href="#modes" data-i18n="nav.features">遊び方</a>
+            <a href="characters/">キャラクター</a>
             <a href="#expansion" data-i18n="nav.expansion">拡張MOD</a>
             <a class="nav-github" href="https://github.com/takoyaki3466/MojiBattleEX" target="_blank"
                rel="noopener noreferrer">GitHub ↗</a>
@@ -1336,10 +1479,32 @@
         </div>
     </section>
 
+    <section class="characters-teaser" id="characters" aria-labelledby="characters-heading">
+        <div class="container characters-teaser-inner">
+            <div class="characters-teaser-copy" data-reveal="fadeInLeft">
+                <span class="section-index">03 / CHARACTERS</span>
+                <h2 id="characters-heading">24の文字、<br>24の戦い方。</h2>
+                <p>成長、制圧、召喚、座標操作。メイン16体と補助8体を、ゲームのキャラクターセレクトのように触って見られる紹介ページへ。</p>
+                <a class="button button-primary" href="characters/">キャラクターを選ぶ <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="teaser-roster" data-reveal="fadeInRight" aria-label="キャラクター紹介ページのプレビュー">
+                <a class="teaser-fighter" href="characters/#kabushiki" data-name="株式会社"><img src="../../assets/images/mojibattleex/characters/kabushiki.png" alt="株式会社"></a>
+                <a class="teaser-fighter" href="characters/#integral" data-name="積分"><img src="../../assets/images/mojibattleex/characters/integral.png" alt="積分"></a>
+                <a class="teaser-fighter" href="characters/#biang" data-name="ビャン"><img src="../../assets/images/mojibattleex/characters/biang.png" alt="ビャン"></a>
+                <a class="teaser-fighter" href="characters/#crab" data-name="蟹"><img src="../../assets/images/mojibattleex/characters/crab.png" alt="蟹"></a>
+                <a class="teaser-fighter" href="characters/#one" data-name="1"><img src="../../assets/images/mojibattleex/characters/one.png" alt="1"></a>
+                <a class="teaser-fighter" href="characters/#zan" data-name="斬"><img src="../../assets/images/mojibattleex/characters/zan.png" alt="斬"></a>
+                <a class="teaser-fighter" href="characters/#maki" data-name="薪"><img src="../../assets/images/mojibattleex/characters/maki.png" alt="薪"></a>
+                <a class="teaser-fighter" href="characters/#flower" data-name="花"><img src="../../assets/images/mojibattleex/characters/flower.png" alt="花"></a>
+                <span class="teaser-badge" aria-hidden="true">24<br>FIGHTERS</span>
+            </div>
+        </div>
+    </section>
+
     <section class="section expansion" id="expansion" aria-labelledby="expansion-heading">
         <div class="container">
             <div class="section-head" data-reveal="fadeInUp">
-                <div><span class="section-index">03 / EXPANSION MOD</span>
+                <div><span class="section-index">04 / EXPANSION MOD</span>
                     <h2 class="section-title" id="expansion-heading" data-i18n="expansion.title">まだ増えます。</h2>
                 </div>
                 <p class="section-copy" data-i18n="expansion.copy">
@@ -1382,7 +1547,7 @@
     <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
         <div class="container">
             <div class="section-head" data-reveal="fadeInUp">
-                <div><span class="section-index">04 / CAPTURES</span>
+                <div><span class="section-index">05 / CAPTURES</span>
                     <h2 class="section-title" id="gallery-heading" data-i18n="gallery.title">画面の圧も、<br>ゲーム性。
                     </h2></div>
                 <p class="section-copy" data-i18n="gallery.copy">
@@ -1417,7 +1582,7 @@
     <section class="section section-rule" aria-labelledby="tech-heading">
         <div class="container tech-layout">
             <div class="tech-sticky" data-reveal="fadeInLeft">
-                <span class="section-index">05 / UNDER THE HOOD</span>
+                <span class="section-index">06 / UNDER THE HOOD</span>
                 <h2 id="tech-heading" data-i18n="tech.title">ふざけた見た目、<br>まじめな中身。</h2>
                 <p data-i18n="tech.copy">
                     ゲームルールと描画を分離し、データ・翻訳・能力実装を名前空間付きリソースで接続。標準コンテンツさえ外部MODと同じ流れで読み込む構成です。</p>
