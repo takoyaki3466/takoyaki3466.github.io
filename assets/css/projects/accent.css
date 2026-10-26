@@ -1,1 +1,180 @@
-.project-header{border-color:#283345;background:rgba(14,22,35,.96);color:#f5f7fb}.project-header .back-link{color:#aeb9c8}.project-header .project-nav a:hover,.project-header .back-link:hover{color:#fff}.project-footer{border-color:#283345;background:#101827;color:#dbe3ef}.project-footer .footer-row{color:#9eacbd}.section-dark{border-block:1px solid #2a3545;background:#121b29;color:#f4f7fb}.section-dark .section-intro,.section-dark .details-body{color:#aeb9c8}.section-dark .card,.section-dark details{border-color:#344156;background:#1b2636}.section-dark .card p{color:#aeb9c8}.dark-panel{border:1px solid #344156;border-radius:16px;background:#182333;color:#f5f7fb}.interactive-note{margin-top:16px;color:var(--project-muted);font-size:12px;line-height:1.8}.project-hero h1{max-width:none;white-space:nowrap;text-wrap:nowrap}.project-hero h1 br{display:none}.curriculum-hero h1,.peaa-hero h1{font-size:clamp(38px,5.2vw,72px)}.mtk-hero h1{font-size:clamp(42px,6vw,80px)}.section h2{word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance}.gimmick-stage{min-height:100svh;display:grid;align-items:center;overflow:hidden}.gimmick-kicker{font-size:clamp(11px,1vw,14px);font-weight:900;letter-spacing:.18em}.gimmick-title{margin:0;font-size:clamp(42px,8vw,108px);line-height:.92;letter-spacing:-.065em;word-break:keep-all;text-wrap:balance}.gimmick-button{min-height:58px;padding-inline:26px;font-size:15px}#screens,#gallery,#architecture,.enchant-section{min-height:100svh;display:grid;align-items:center;overflow:hidden}#screens h2,#gallery h2,#architecture h2,.enchant-section h2{font-size:clamp(44px,7vw,92px);line-height:.96}.peaa-hero{min-height:calc(100svh - 68px);display:grid;align-items:center}.enchant-lab{min-height:clamp(360px,52vh,620px);align-content:center}.enchant-lab .book-token{font-size:clamp(20px,4vw,54px);padding:clamp(18px,3vw,34px)}.architecture-lab{min-height:58vh;display:grid;align-content:center}.route-node{font-size:clamp(12px,1.5vw,18px)!important}.chaos-image{position:relative}.chaos-controls{display:grid;place-items:center;gap:12px;margin-top:24px;text-align:center}.chaos-count{font-size:clamp(44px,10vw,138px);font-weight:950;line-height:.8;color:var(--project-accent)}@media(max-width:760px){.project-hero h1{white-space:normal;font-size:clamp(38px,12vw,64px)}.gimmick-stage,#screens,#gallery,#architecture,.enchant-section{min-height:92svh}.book-formula{justify-content:center}}
+.project-header {
+    border-color: #283345;
+    background: rgba(14, 22, 35, .96);
+    color: #f5f7fb
+}
+
+.project-header .back-link {
+    color: #aeb9c8
+}
+
+.project-header .project-nav a:hover, .project-header .back-link:hover {
+    color: #fff
+}
+
+.project-footer {
+    border-color: #283345;
+    background: #101827;
+    color: #dbe3ef
+}
+
+.project-footer .footer-row {
+    color: #9eacbd
+}
+
+.section-dark {
+    border-block: 1px solid #2a3545;
+    background: #121b29;
+    color: #f4f7fb
+}
+
+.section-dark .section-intro, .section-dark .details-body {
+    color: #aeb9c8
+}
+
+.section-dark .card, .section-dark details {
+    border-color: #344156;
+    background: #1b2636
+}
+
+.section-dark .card p {
+    color: #aeb9c8
+}
+
+.dark-panel {
+    border: 1px solid #344156;
+    border-radius: 16px;
+    background: #182333;
+    color: #f5f7fb
+}
+
+.interactive-note {
+    margin-top: 16px;
+    color: var(--project-muted);
+    font-size: 12px;
+    line-height: 1.8
+}
+
+.project-hero h1 {
+    max-width: none;
+    white-space: nowrap;
+    text-wrap: nowrap
+}
+
+.project-hero h1 br {
+    display: none
+}
+
+.curriculum-hero h1, .peaa-hero h1 {
+    font-size: clamp(38px, 5.2vw, 72px)
+}
+
+.mtk-hero h1 {
+    font-size: clamp(42px, 6vw, 80px)
+}
+
+.section h2 {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    text-wrap: balance
+}
+
+.gimmick-stage {
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    overflow: hidden
+}
+
+.gimmick-kicker {
+    font-size: clamp(11px, 1vw, 14px);
+    font-weight: 900;
+    letter-spacing: .18em
+}
+
+.gimmick-title {
+    margin: 0;
+    font-size: clamp(42px, 8vw, 108px);
+    line-height: .92;
+    letter-spacing: -.065em;
+    word-break: keep-all;
+    text-wrap: balance
+}
+
+.gimmick-button {
+    min-height: 58px;
+    padding-inline: 26px;
+    font-size: 15px
+}
+
+#screens, #gallery, #architecture, .enchant-section {
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    overflow: hidden
+}
+
+#screens h2, #gallery h2, #architecture h2, .enchant-section h2 {
+    font-size: clamp(44px, 7vw, 92px);
+    line-height: .96
+}
+
+.peaa-hero {
+    min-height: calc(100svh - 68px);
+    display: grid;
+    align-items: center
+}
+
+.enchant-lab {
+    min-height: clamp(360px, 52vh, 620px);
+    align-content: center
+}
+
+.enchant-lab .book-token {
+    font-size: clamp(20px, 4vw, 54px);
+    padding: clamp(18px, 3vw, 34px)
+}
+
+.architecture-lab {
+    min-height: 58vh;
+    display: grid;
+    align-content: center
+}
+
+.route-node {
+    font-size: clamp(12px, 1.5vw, 18px) !important
+}
+
+.chaos-image {
+    position: relative
+}
+
+.chaos-controls {
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    text-align: center
+}
+
+.chaos-count {
+    font-size: clamp(44px, 10vw, 138px);
+    font-weight: 950;
+    line-height: .8;
+    color: var(--project-accent)
+}
+
+@media (max-width: 760px) {
+    .project-hero h1 {
+        white-space: normal;
+        font-size: clamp(38px, 12vw, 64px)
+    }
+
+    .gimmick-stage, #screens, #gallery, #architecture, .enchant-section {
+        min-height: 92svh
+    }
+
+    .book-formula {
+        justify-content: center
+    }
+}

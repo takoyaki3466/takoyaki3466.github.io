@@ -1,1 +1,125 @@
-@import url("accent.css");:root{--project-accent:#7551b2;--project-soft:#f1ebfb}.peaa-hero{overflow:hidden;background:radial-gradient(circle at 80% 30%,#e8dfff 0,transparent 28%),linear-gradient(135deg,#fff,#f7f2ff)}.hero-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}.hero-shot{box-shadow:0 25px 75px rgba(80,47,137,.18)}.energy-button{border-color:#a78ad2;color:#5d408e}.energy-meter{width:min(420px,100%);height:8px;margin-top:20px;overflow:hidden;border-radius:999px;background:#dcd2ea}.energy-meter span{display:block;width:0;height:100%;background:linear-gradient(90deg,#7551b2,#c06cff)}.energy-status{margin:9px 0 0;color:#665778;font-size:11px;font-weight:800;letter-spacing:.08em}.grade-selector{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.grade-selector button{padding:10px 16px;border:1px solid #d9cbed;border-radius:999px;background:#fff;color:#5d408e;cursor:pointer;font-weight:800}.grade-selector button[aria-selected=true]{background:var(--project-accent);color:#fff}.grade-panel{min-height:260px}.grade-card{display:grid;grid-template-columns:1fr minmax(240px,.8fr);gap:26px;align-items:center;padding:30px;border:1px solid #d9cbed;border-radius:14px;background:#fff}.grade-card h3{margin-top:0;color:var(--project-accent)}.grade-card img{width:100%;max-height:220px;object-fit:contain;border-radius:8px;background:#101010}.grade-card[hidden]{display:none}.development-badge{display:inline-block;padding:7px 10px;border-radius:999px;background:#fff1c5;color:#745900;font-size:11px;font-weight:800}.status-copy{margin-top:14px}@media(max-width:760px){.hero-layout,.grade-card{grid-template-columns:1fr}}
+@import url("accent.css");
+
+:root {
+    --project-accent: #7551b2;
+    --project-soft: #f1ebfb
+}
+
+.peaa-hero {
+    overflow: hidden;
+    background: radial-gradient(circle at 80% 30%, #e8dfff 0, transparent 28%), linear-gradient(135deg, #fff, #f7f2ff)
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap: 44px;
+    align-items: center
+}
+
+.hero-shot {
+    box-shadow: 0 25px 75px rgba(80, 47, 137, .18)
+}
+
+.energy-button {
+    border-color: #a78ad2;
+    color: #5d408e
+}
+
+.energy-meter {
+    width: min(420px, 100%);
+    height: 8px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #dcd2ea
+}
+
+.energy-meter span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #7551b2, #c06cff)
+}
+
+.energy-status {
+    margin: 9px 0 0;
+    color: #665778;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em
+}
+
+.grade-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px
+}
+
+.grade-selector button {
+    padding: 10px 16px;
+    border: 1px solid #d9cbed;
+    border-radius: 999px;
+    background: #fff;
+    color: #5d408e;
+    cursor: pointer;
+    font-weight: 800
+}
+
+.grade-selector button[aria-selected=true] {
+    background: var(--project-accent);
+    color: #fff
+}
+
+.grade-panel {
+    min-height: 260px
+}
+
+.grade-card {
+    display: grid;
+    grid-template-columns:1fr minmax(240px, .8fr);
+    gap: 26px;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid #d9cbed;
+    border-radius: 14px;
+    background: #fff
+}
+
+.grade-card h3 {
+    margin-top: 0;
+    color: var(--project-accent)
+}
+
+.grade-card img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #101010
+}
+
+.grade-card[hidden] {
+    display: none
+}
+
+.development-badge {
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #fff1c5;
+    color: #745900;
+    font-size: 11px;
+    font-weight: 800
+}
+
+.status-copy {
+    margin-top: 14px
+}
+
+@media (max-width: 760px) {
+    .hero-layout, .grade-card {
+        grid-template-columns:1fr
+    }
+}

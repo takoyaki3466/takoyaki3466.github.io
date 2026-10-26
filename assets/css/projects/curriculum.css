@@ -1,1 +1,64 @@
-@import url("accent.css");:root{--project-accent:#3079bd;--project-soft:#eaf5ff}.curriculum-hero{background:linear-gradient(135deg,#fff 20%,#eaf5ff)}.hero-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}.hero-shot{transform:rotate(1deg);box-shadow:0 26px 70px rgba(35,86,130,.18)}.tour-shot{max-width:920px;margin:24px auto 0}.tour-shot img{aspect-ratio:16/9;object-fit:contain;background:#e7eef3}.deadline-status{margin:14px 0 0;color:#65748a;font-size:12px;font-weight:700}.focus-mode .curriculum-hero{background:linear-gradient(135deg,#101827 12%,#18324b 100%);color:#f7fbff}.focus-mode .curriculum-hero .hero-copy,.focus-mode .deadline-status{color:#bdcde0}.focus-mode .hero-shot{box-shadow:0 0 0 4px rgba(83,178,255,.18),0 28px 80px rgba(0,0,0,.35)}@media(max-width:800px){.hero-layout{grid-template-columns:1fr;gap:28px}.hero-shot{transform:none}}
+@import url("accent.css");
+
+:root {
+    --project-accent: #3079bd;
+    --project-soft: #eaf5ff
+}
+
+.curriculum-hero {
+    background: linear-gradient(135deg, #fff 20%, #eaf5ff)
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap: 48px;
+    align-items: center
+}
+
+.hero-shot {
+    transform: rotate(1deg);
+    box-shadow: 0 26px 70px rgba(35, 86, 130, .18)
+}
+
+.tour-shot {
+    max-width: 920px;
+    margin: 24px auto 0
+}
+
+.tour-shot img {
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background: #e7eef3
+}
+
+.deadline-status {
+    margin: 14px 0 0;
+    color: #65748a;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.focus-mode .curriculum-hero {
+    background: linear-gradient(135deg, #101827 12%, #18324b 100%);
+    color: #f7fbff
+}
+
+.focus-mode .curriculum-hero .hero-copy, .focus-mode .deadline-status {
+    color: #bdcde0
+}
+
+.focus-mode .hero-shot {
+    box-shadow: 0 0 0 4px rgba(83, 178, 255, .18), 0 28px 80px rgba(0, 0, 0, .35)
+}
+
+@media (max-width: 800px) {
+    .hero-layout {
+        grid-template-columns:1fr;
+        gap: 28px
+    }
+
+    .hero-shot {
+        transform: none
+    }
+}

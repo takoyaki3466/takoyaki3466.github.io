@@ -1,1 +1,173 @@
-@import url("accent.css");:root{--project-accent:#d36b22;--project-soft:#fff1df}.manaitapp-hero{background:linear-gradient(145deg,#fff 24%,#fff1df)}.hero-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}.hero-shot{box-shadow:0 25px 70px rgba(151,75,20,.16)}.tier-road{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.tier{display:grid;min-height:120px;place-items:center;border:1px solid #f0d3b8;border-radius:12px;background:#fff;color:inherit;cursor:pointer;text-align:center;font:inherit;font-weight:800}.tier span{display:block;color:var(--project-accent);font-size:24px}.tier[aria-selected=true]{border-color:var(--project-accent);background:var(--project-soft);box-shadow:0 10px 30px rgba(211,107,34,.16)}.tier-output{margin:18px 0 0;text-align:center}.tier-output strong,.tier-output span{color:var(--project-accent);font-size:22px}.loader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.loader{padding:28px;border:1px solid #f0d3b8;border-radius:14px;background:#fff;text-align:center}.loader strong{display:block;margin-bottom:8px;font-size:20px}.architecture-lab{padding:28px}.module-tree{display:flex;flex-wrap:wrap;gap:8px}.module-tree span{padding:8px 11px;border-radius:6px;background:#0e1724;color:#ffb77f;font:700 12px ui-monospace,monospace}.route-flow{display:flex;align-items:center;justify-content:center;gap:12px;margin:34px 0;overflow-x:auto}.route-node{min-width:120px;padding:18px 14px;border:1px solid #46556b;border-radius:10px;background:#0f1825;text-align:center;font-size:12px;font-weight:800}.route-target{border-color:#ff9550;color:#ffb17c}.loader-switch{display:flex;flex-wrap:wrap;gap:8px}.loader-switch button{padding:9px 13px;border:1px solid #46556b;border-radius:999px;background:transparent;color:#dce5f0;cursor:pointer;font-weight:800}.loader-switch button[aria-selected=true]{border-color:#ff9550;background:#ff9550;color:#17100b}.architecture-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}@media(max-width:800px){.hero-layout{grid-template-columns:1fr}.tier-road{grid-template-columns:repeat(2,1fr)}.loader-grid,.architecture-cards{grid-template-columns:1fr}.route-flow{justify-content:flex-start}}
+@import url("accent.css");
+
+:root {
+    --project-accent: #d36b22;
+    --project-soft: #fff1df
+}
+
+.manaitapp-hero {
+    background: linear-gradient(145deg, #fff 24%, #fff1df)
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap: 44px;
+    align-items: center
+}
+
+.hero-shot {
+    box-shadow: 0 25px 70px rgba(151, 75, 20, .16)
+}
+
+.tier-road {
+    display: grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap: 10px
+}
+
+.tier {
+    display: grid;
+    min-height: 120px;
+    place-items: center;
+    border: 1px solid #f0d3b8;
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+    font: inherit;
+    font-weight: 800
+}
+
+.tier span {
+    display: block;
+    color: var(--project-accent);
+    font-size: 24px
+}
+
+.tier[aria-selected=true] {
+    border-color: var(--project-accent);
+    background: var(--project-soft);
+    box-shadow: 0 10px 30px rgba(211, 107, 34, .16)
+}
+
+.tier-output {
+    margin: 18px 0 0;
+    text-align: center
+}
+
+.tier-output strong, .tier-output span {
+    color: var(--project-accent);
+    font-size: 22px
+}
+
+.loader-grid {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 14px
+}
+
+.loader {
+    padding: 28px;
+    border: 1px solid #f0d3b8;
+    border-radius: 14px;
+    background: #fff;
+    text-align: center
+}
+
+.loader strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px
+}
+
+.architecture-lab {
+    padding: 28px
+}
+
+.module-tree {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.module-tree span {
+    padding: 8px 11px;
+    border-radius: 6px;
+    background: #0e1724;
+    color: #ffb77f;
+    font: 700 12px ui-monospace, monospace
+}
+
+.route-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 34px 0;
+    overflow-x: auto
+}
+
+.route-node {
+    min-width: 120px;
+    padding: 18px 14px;
+    border: 1px solid #46556b;
+    border-radius: 10px;
+    background: #0f1825;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800
+}
+
+.route-target {
+    border-color: #ff9550;
+    color: #ffb17c
+}
+
+.loader-switch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.loader-switch button {
+    padding: 9px 13px;
+    border: 1px solid #46556b;
+    border-radius: 999px;
+    background: transparent;
+    color: #dce5f0;
+    cursor: pointer;
+    font-weight: 800
+}
+
+.loader-switch button[aria-selected=true] {
+    border-color: #ff9550;
+    background: #ff9550;
+    color: #17100b
+}
+
+.architecture-cards {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px
+}
+
+@media (max-width: 800px) {
+    .hero-layout {
+        grid-template-columns:1fr
+    }
+
+    .tier-road {
+        grid-template-columns:repeat(2, 1fr)
+    }
+
+    .loader-grid, .architecture-cards {
+        grid-template-columns:1fr
+    }
+
+    .route-flow {
+        justify-content: flex-start
+    }
+}
