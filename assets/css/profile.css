@@ -124,3 +124,58 @@
 @media (max-width: 850px) { .profile-body .container { width: min(calc(100% - 40px), 1280px); } .anime-hero { min-height: 620px; grid-template-columns: minmax(0, 1fr) 310px; gap: 18px; } .anime-hero-visual { width: 310px; } .anime-hero h1 { font-size: clamp(56px, 10vw, 92px); } .intro-layout, .process-layout { grid-template-columns: 1fr; gap: 24px; } .process-layout > .display-heading { position: static; } .toolkit-grid { grid-template-columns: 1fr 1fr; } .toolkit-learning { grid-column: 1 / -1; min-height: 180px; } }
 @media (max-width: 620px) { .profile-body .container { width: min(calc(100% - 34px), 1280px); } .profile-header { height: 62px; } .profile-header .site-nav { gap: 17px; } .profile-header .site-nav a { font-size: 11px; } .anime-hero { min-height: auto; grid-template-columns: 1fr; gap: 36px; padding-top: 70px; padding-bottom: 100px; } .anime-hero h1 { font-size: clamp(57px, 17vw, 96px); } .anime-hero-visual { grid-row: 1; width: min(82vw, 340px); justify-self: center; margin: 0; } .anime-hero-visual figcaption { right: -20px; } .hero-meta { gap: 8px 10px; font-size: 8px; } .hero-meta span + span::before { margin-right: 10px; } .scroll-cue { bottom: 36px; } .anime-section { padding-block: 76px; } .section-label { font-size: 8px; } .display-heading { font-size: clamp(36px, 10vw, 58px); } .focus-section, .process-section { padding-block: 74px; } .focus-heading-row, .projects-heading-row { align-items: flex-start; flex-direction: column; gap: 14px; padding-block: 32px 24px; } .section-note, .projects-heading-row > p { margin: 0; } .focus-grid, .work-grid, .toolkit-grid { grid-template-columns: 1fr; } .focus-card { min-height: 250px; padding: 23px; } .work-feature, .toolkit-learning { grid-column: auto; } .work-card, .work-feature { min-height: 260px; padding: 23px; } .process-layout { padding-top: 32px; } .toolkit-section { padding-block: 80px; } .toolkit-section > .display-heading { padding-block: 32px 24px; } .toolkit-card, .toolkit-learning { min-height: 205px; } .motion-playground { padding-block: 65px; } .playground-layout { grid-template-columns: 1fr; gap: 34px; } .playground-demo { grid-template-columns: 112px 1fr; gap: 14px; } .signal-grid { width: 112px; height: 112px; gap: 4px; }.playground-status { margin-top: -32px; font-size: 8px; } .profile-footer .footer-inner { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { .profile-body *, .profile-body *::before, .profile-body *::after { scroll-behavior: auto !important; transition: none !important; } }
+/* Golden-ratio proportions and a consistent spacing rhythm for the profile page. */
+.profile-body {
+    --phi: 1.618;
+    --profile-space-unit: clamp(1rem, 1.5vw, 1.5rem);
+    --profile-content: 1240px;
+}
+.profile-body .container { width: min(calc(100% - 2 * var(--profile-space-unit)), var(--profile-content)); }
+.anime-hero {
+    min-height: clamp(620px, 82vh, 860px);
+    grid-template-columns: minmax(0, 1.618fr) minmax(280px, 1fr);
+    gap: clamp(28px, 5vw, 76px);
+    padding-block: clamp(54px, 8vw, 104px) clamp(88px, 10vw, 128px);
+}
+.anime-hero-copy { max-width: 700px; }
+.anime-hero-lead { max-width: 38rem; }
+.anime-hero-visual { width: min(100%, 500px); justify-self: end; }
+.anime-section { padding-block: clamp(82px, 9vw, 116px); }
+.intro-layout { grid-template-columns: minmax(0, 1.618fr) minmax(270px, 1fr); gap: clamp(40px, 7vw, 110px); padding-top: clamp(36px, 4vw, 54px); }
+.display-heading { max-width: 13ch; }
+.focus-section, .process-section { padding-block: clamp(82px, 9vw, 116px); }
+.focus-heading-row, .projects-heading-row { padding-block: clamp(34px, 4vw, 52px) clamp(26px, 3vw, 40px); }
+.focus-heading-row { display: grid; grid-template-columns: minmax(0, 1.618fr) minmax(220px, 1fr); }
+.focus-heading-row .section-note { justify-self: end; }
+.focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.focus-card { min-height: 300px; padding: clamp(26px, 3vw, 40px); }
+.work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
+.work-card { min-height: 290px; padding: clamp(26px, 3vw, 40px); }
+.work-feature { min-height: 330px; }
+.process-layout { grid-template-columns: minmax(240px, .618fr) minmax(0, 1fr); gap: clamp(42px, 7vw, 110px); padding-top: clamp(38px, 4vw, 54px); }
+.toolkit-section > .display-heading { max-width: 14ch; padding-block: clamp(34px, 4vw, 52px) clamp(28px, 3vw, 40px); }
+.toolkit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); }
+.toolkit-card { min-height: 270px; padding: clamp(24px, 2.5vw, 34px); }
+.playground-layout { grid-template-columns: minmax(0, 1fr) minmax(0, .618fr); gap: clamp(40px, 7vw, 110px); }
+@media (max-width: 850px) {
+    .profile-body .container { width: min(calc(100% - 40px), var(--profile-content)); }
+    .anime-hero { min-height: 620px; grid-template-columns: minmax(0, 1fr) minmax(260px, .618fr); gap: 24px; }
+    .intro-layout, .process-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 28px; }
+    .toolkit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .toolkit-learning { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+    .profile-body .container { width: min(calc(100% - 34px), var(--profile-content)); }
+    .anime-hero { min-height: auto; grid-template-columns: 1fr; gap: 34px; padding-block: 56px 96px; }
+    .anime-hero-visual { width: min(82vw, 340px); }
+    .anime-section { padding-block: 72px; }
+    .intro-layout, .process-layout, .focus-heading-row, .playground-layout { grid-template-columns: 1fr; gap: 22px; }
+    .focus-section, .process-section { padding-block: 72px; }
+    .focus-grid, .work-grid, .toolkit-grid { grid-template-columns: 1fr; }
+    .focus-card, .work-card, .work-feature, .toolkit-card, .toolkit-learning { min-height: 0; padding: 24px; }
+    .focus-card { min-height: 250px; }
+    .work-card, .work-feature { min-height: 260px; }
+    .toolkit-card, .toolkit-learning { min-height: 205px; }
+    .toolkit-learning { grid-column: auto; }
+    .playground-layout { gap: 32px; }
+}

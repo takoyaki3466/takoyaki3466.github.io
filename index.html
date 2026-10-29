@@ -3,35 +3,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0b0b0d">
     <meta name="description" content="個人制作したゲーム、アプリケーション、Minecraft MODを紹介するポートフォリオです。">
     <title>Home | Works</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/accent.css">
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/animations/home.js" defer></script>
 </head>
-<body data-i18n-base="assets/lang/ja_jp.json"><a class="skip-link" href="#main"
-                                                 data-i18n="site.a11y.skip">本文へ移動</a>
+<body class="home-body" data-i18n-base="assets/lang/ja_jp.json"><a class="skip-link" href="#main"
+                                                                   data-i18n="site.a11y.skip">本文へ移動</a>
 <header class="site-header">
     <div class="container header-inner">
+        <a class="home-wordmark" href="./" aria-label="takoyaki3466 ホーム">takoyaki3466<span> / WORKS</span></a>
         <nav class="site-nav" aria-label="メインナビゲーション" data-i18n-aria-label="site.a11y.nav"><a
-                href="./" aria-current="page">Home</a><a href="#projects">Projects</a><a href="about/">About</a></nav>
+                href="#projects">Projects</a><a href="about/">About</a><a class="home-nav-github"
+                                                                          href="https://github.com/takoyaki3466"
+                                                                          target="_blank" rel="noopener noreferrer">GitHub
+            ↗</a></nav>
     </div>
 </header>
 <main id="main">
-    <section class="hero container" aria-labelledby="hero-heading"><h1 id="hero-heading" data-i18n="home.hero.title">0
-        から 1 を、この手で。</h1>
-        <p class="hero-description" data-i18n="home.hero.description">
-            ゲームやアプリケーションなど、個人で制作した作品をまとめています。各作品のページから、制作内容をご覧いただけます。</p>
-        <a class="button button-primary" href="#projects"><span data-i18n="home.hero.cta">作品を見る</span> <span
-                aria-hidden="true">→</span></a></section>
-    <section class="home-about-section" aria-label="About">
+    <section class="home-hero container" aria-labelledby="hero-heading">
+        <div class="home-hero-copy">
+            <p class="home-eyebrow"><span class="home-status-dot"></span> INDEPENDENT DEVELOPER · JAPAN</p>
+            <h1 id="hero-heading" aria-label="0から1を、この手で。"><span class="home-title-line"><span
+                    class="home-title-char"><span class="home-title-char-inner">0</span></span><span
+                    class="home-title-char"><span class="home-title-char-inner">か</span></span><span
+                    class="home-title-char"><span class="home-title-char-inner">ら</span></span><span
+                    class="home-title-char home-title-char--flip"><span
+                    class="home-title-char-inner">1</span></span><span class="home-title-char"><span
+                    class="home-title-char-inner">を</span></span><span class="home-title-char"><span
+                    class="home-title-char-inner">、</span></span></span><span class="home-title-line home-title-accent"><span
+                    class="home-title-char"><span class="home-title-char-inner">こ</span></span><span
+                    class="home-title-char"><span class="home-title-char-inner">の</span></span><span
+                    class="home-title-char home-title-char--flip"><span
+                    class="home-title-char-inner">手</span></span><span class="home-title-char"><span
+                    class="home-title-char-inner">で</span></span><span class="home-title-char"><span
+                    class="home-title-char-inner">。</span></span></span></h1>
+            <p class="home-hero-description" data-i18n="home.hero.description">
+                ゲームやアプリケーションなど、個人で制作した作品をまとめています。各作品のページから、制作内容をご覧いただけます。</p>
+            <a class="home-cta" href="#projects"><span data-i18n="home.hero.cta">作品を見る</span><span
+                    aria-hidden="true">↘</span></a>
+            <p class="home-hero-meta"><span>JAVA</span><span>GAMES</span><span>MODS</span><span>APPS</span></p>
+        </div>
+        <a class="home-scroll-cue" href="#home-about"><span>SCROLL TO EXPLORE</span><i></i></a>
+    </section>
+    <section class="home-about-section" id="home-about" aria-label="About">
         <div class="container">
             <a class="home-about-card" href="about/">
-                <img src="assets/images/profile-icon.jpg" alt="マザーボード上のIntel Coreプロセッサ" width="76" height="76">
-                <span class="home-about-copy"><span class="home-about-kicker">ABOUT / DEVELOPER PROFILE</span><strong data-i18n="home.about.title">つくる人について</strong><span data-i18n="home.about.description">開発のこと、技術のこと、試行錯誤の記録。</span></span>
-                <span class="home-about-cta"><span data-i18n="home.about.cta">プロフィールを読む</span><span aria-hidden="true">↗</span></span>
+                <img src="assets/images/profile-icon.jpg" alt="マザーボード上のIntel Coreプロセッサ" width="76"
+                     height="76">
+                <span class="home-about-copy"><span class="home-about-kicker">ABOUT / DEVELOPER PROFILE</span><strong
+                        data-i18n="home.about.title">つくる人について</strong><span data-i18n="home.about.description">開発のこと、技術のこと、試行錯誤の記録。</span></span>
+                <span class="home-about-cta"><span data-i18n="home.about.cta">プロフィールを読む</span><span
+                        aria-hidden="true">↗</span></span>
             </a>
         </div>
     </section>
