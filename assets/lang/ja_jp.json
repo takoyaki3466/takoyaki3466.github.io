@@ -11,9 +11,8 @@
       "description": "ゲームやアプリケーションなど、個人で制作した作品をまとめています。各作品のページから、制作内容をご覧いただけます。",
       "cta": "作品を見る"
     },
-    "projects": {
-      "description": "制作した作品の一覧"
-    },
+    "about": { "title": "つくる人について", "description": "開発のこと、技術のこと、試行錯誤の記録。", "cta": "プロフィールを読む" },
+    "projects": { "description": "制作した作品の一覧" },
     "cards": {
       "mojibattleex": "文字そのものが戦う、最大4人のローカル対戦3Dアクション。",
       "curriculum": "履修科目と単位、成績をひとまとめにする大学生活の相棒。",
@@ -21,6 +20,38 @@
       "manaitapp": "懐かしいまな板MODを、現代の3つのローダーへ。",
       "peaa": "昔のPEAAを、まずは3段階のAEGUから再実装。",
       "simpleitemedit": "OPなしで、見た目もエンチャントも自分らしく編集。"
+    }
+  },
+  "profile": {
+    "hero": { "title": "作りたいものを、仕組みから作る。", "description": "Javaを中心に、Minecraft MODやゲーム、デスクトップアプリを個人開発しています。機能を一つずつ形にしながら、仕組みを理解して次の開発に活かしています。" },
+    "links": { "github": "GitHubプロフィール", "modrinth": "Modrinthプロフィール" },
+    "playground": { "title": "動かして、仕組みを試す。", "description": "ボタンを押すと、グリッドが反応します。小さな実験も、次のアイデアの入口。" },
+    "about": { "title": "試しながら、少しずつ仕組みにする", "description": "Minecraft MODを長く作りながら、Javaのゲームやデスクトップアプリにも取り組んでいます。アイテムや画面を追加するだけでなく、それらを支えるデータ管理や通信の処理も実装してきました。", "process": "エラーに出会ったらログやコードを見て原因を追い、機能が増えてきたら共通化や責務の分け方を考える。試行錯誤で得た知識を、次の機能やプロジェクトに持ち込むのが個人開発の面白さだと思っています。" },
+    "focus": {
+      "title": "取り組んでいる分野",
+      "minecraft": { "title": "Minecraft MOD", "description": "Forgeを中心に、アイテムやブロック、GUI、インベントリなどを実装。Manaita++では複数ローダーで共通部分と固有実装を分ける構成にも取り組んでいます。" },
+      "game": { "title": "ゲーム開発", "description": "JavaとlibGDXで文字キャラクターの対戦ゲームを開発。ゲーム本体に加え、キャラクターやスキルを拡張する仕組みも試しています。" },
+      "desktop": { "title": "デスクトップアプリ", "description": "JavaFXで履修管理アプリを制作。画面だけでなく、SQLiteを使ったデータ管理や機能ごとの分離にも取り組んでいます。" },
+      "backend": { "title": "API・バックエンド", "description": "JavaクライアントとGoサーバーの連携、HTTPやJSONを使うAPIを学びながら開発中です。" }
+    },
+    "skills": {
+      "title": "技術と取り組んできたこと", "main": "主に使用している技術", "practice": { "title": "実装で扱ってきた領域", "description": "GUI設計 · ゲーム内データ管理 · Capability · ネットワーク同期 · レジストリ · API設計 · 共通コードとローダー固有コードの分離 · JSON" }, "learning": { "title": "学習・開発中", "description": "GoによるHTTP APIサーバー · JavaからのAPI利用 · クライアントとサーバーの責務分離" }
+    },
+    "projects": {
+      "title": "作品", "description": "制作を続けているプロジェクトを中心に紹介します。",
+      "manaitamtk": "長く開発を続けているまな板MOD。装備や便利アイテムに加え、GUIやCapabilityなど機能を支える仕組みも実装しています。",
+      "manaitapp": "過去のまな板MODを現代の環境に向けて再実装。Forge・Fabric・NeoForgeで共通部分とローダー固有実装を分ける構成に取り組んでいます。",
+      "peaa": "昔のProjectE関連アドオンを現代環境へ再実装中。現在の作品紹介ページではAEGUの段階的な追加を紹介しています。",
+      "moji": "文字キャラクターが戦うローカル対戦3Dアクション。公開リポジトリのURLは確認できていないため、既存の作品紹介へ案内します。",
+      "curriculum": "履修科目や単位、成績を管理するアプリ。データはSQLiteで扱っています。",
+      "simpleitemedit": "Paperサーバー向けのアイテム編集プラグイン。GitHub Releasesではエンチャント関連機能を含む更新を確認できます。"
+    },
+    "philosophy": {
+      "title": "開発への向き合い方",
+      "incremental": { "title": "一つずつ仕組みを作る", "description": "ManaitaMTKでは、作業台やチェスト、インベントリ、GUIなどを必要に応じて追加してきました。小さく作って確かめ、次の機能につなげます。" },
+      "debug": { "title": "原因を調べて直す", "description": "クラッシュログやコンパイルエラーを読み、起きていることを確かめてから修正するようにしています。" },
+      "structure": { "title": "重複を減らして整理する", "description": "機能が増えたら共通処理をまとめ、Manaita++では共通コードと各ローダーの実装を分ける設計を進めています。" },
+      "extension": { "title": "後から広げられる形を考える", "description": "MojiBattleEXではキャラクターやスキルを追加できる構成を試し、ゲームを拡張する方法を考えています。" }
     }
   }
 }

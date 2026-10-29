@@ -27,3 +27,85 @@ h1, h2, h3 {
     overflow-wrap: anywhere;
     text-wrap: balance
 }
+
+.home-about-section {
+    padding-bottom: 56px;
+}
+
+.home-about-card {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    padding: 23px 26px;
+    border: 1px solid #293242;
+    background: #111827;
+    color: #f5f7fb;
+    transition: border-color .2s, transform .2s, background .2s;
+}
+
+.home-about-card:hover {
+    transform: translateY(-3px);
+    border-color: #6f94d4;
+    background: #151f30;
+}
+
+.home-about-card img {
+    width: 76px;
+    height: 76px;
+    border: 1px solid #57677f;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.home-about-copy {
+    display: grid;
+    gap: 5px;
+}
+
+.home-about-kicker {
+    color: #9fb9e5;
+    font: 700 9px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    letter-spacing: .12em;
+}
+
+.home-about-copy strong {
+    font-size: 20px;
+}
+
+.home-about-copy > span:last-child {
+    color: #aeb9c8;
+    font-size: 12px;
+}
+
+.home-about-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #dce8fb;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.home-about-cta span:last-child {
+    color: #9fc2ff;
+    font-size: 18px;
+}
+
+.home-about-card:focus-visible {
+    outline: 3px solid #8ab4ff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .home-about-section { padding-bottom: 38px; }
+    .home-about-card { grid-template-columns: 54px minmax(0, 1fr); gap: 14px; padding: 18px; }
+    .home-about-card img { width: 54px; height: 54px; }
+    .home-about-copy strong { font-size: 17px; }
+    .home-about-cta { grid-column: 2; justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-about-card { transition: none; }
+    .home-about-card:hover { transform: none; }
+}
